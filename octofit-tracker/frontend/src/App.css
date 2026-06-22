@@ -1,0 +1,152 @@
+.app-shell {
+  min-height: 100vh;
+  background: #f7f8fa;
+}
+
+.app-header {
+  align-items: end;
+  background: #ffffff;
+  border-bottom: 1px solid #dde3ea;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 28px clamp(18px, 4vw, 48px);
+}
+
+.app-header h1,
+.section-heading h1 {
+  color: #17212b;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.eyebrow {
+  color: #4b6b78;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.nav {
+  gap: 6px;
+}
+
+.nav-pills .nav-link {
+  border-radius: 6px;
+  color: #41505d;
+  font-weight: 600;
+}
+
+.nav-pills .nav-link.active {
+  background: #28666e;
+  color: #ffffff;
+}
+
+.app-main {
+  margin: 0 auto;
+  max-width: 1160px;
+  padding: 28px clamp(16px, 4vw, 48px) 48px;
+}
+
+.view-panel {
+  background: #ffffff;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.data-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.data-card {
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  min-height: 150px;
+  padding: 18px;
+}
+
+.data-card h2,
+.score-row h2 {
+  color: #17212b;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 8px;
+}
+
+.data-card p,
+.score-row p {
+  color: #55636f;
+  margin: 0;
+}
+
+.handle,
+.duration {
+  color: #28666e;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-title-row {
+  align-items: start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.score-list {
+  display: grid;
+  gap: 12px;
+}
+
+.score-row {
+  align-items: center;
+  border: 1px solid #e3e8ee;
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.rank {
+  align-items: center;
+  background: #e9f3f1;
+  border-radius: 6px;
+  color: #1e5b56;
+  display: inline-flex;
+  flex: 0 0 56px;
+  font-weight: 800;
+  height: 42px;
+  justify-content: center;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+  .app-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-link {
+    text-align: center;
+  }
+}
