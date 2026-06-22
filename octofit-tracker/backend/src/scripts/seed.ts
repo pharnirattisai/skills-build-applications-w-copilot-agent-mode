@@ -1,4 +1,4 @@
-import { connectDatabase, disconnectDatabase, mongoUri } from "../database";
+import { connectDatabase, disconnectDatabase, mongoUri } from "../config/database";
 import { Activity } from "../models/Activity";
 import { LeaderboardEntry } from "../models/LeaderboardEntry";
 import { Team } from "../models/Team";

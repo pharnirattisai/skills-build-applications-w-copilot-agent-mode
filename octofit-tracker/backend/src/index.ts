@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
 import { apiConfig } from "./config";
-import { connectDatabase, mongoUri } from "./database";
+import { connectDatabase, mongoUri } from "./config/database";
 import { activitiesRouter } from "./routes/activities";
 import { leaderboardRouter } from "./routes/leaderboard";
 import { teamsRouter } from "./routes/teams";
