@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-import { apiConfig } from "../config";
+import { connectDatabase, disconnectDatabase, mongoUri } from "../database";
 import { Activity } from "../models/Activity";
 import { LeaderboardEntry } from "../models/LeaderboardEntry";
 import { Team } from "../models/Team";
@@ -8,9 +7,9 @@ import { Workout } from "../models/Workout";
 
 const seedDatabase = async () => {
   console.log("Seed the octofit_db database with test data");
-  console.log(`Connecting to ${apiConfig.mongoUri}`);
+  console.log(`Connecting to ${mongoUri}`);
 
-  await mongoose.connect(apiConfig.mongoUri);
+  await connectDatabase();
 
   await Promise.all([
     Activity.deleteMany({}),
@@ -130,5 +129,5 @@ seedDatabase()
     process.exitCode = 1;
   })
   .finally(async () => {
-    await mongoose.disconnect();
+    await disconnectDatabase();
   });

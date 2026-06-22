@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
-import mongoose from "mongoose";
 import { apiConfig } from "./config";
+import { connectDatabase, mongoUri } from "./database";
 import { activitiesRouter } from "./routes/activities";
 import { leaderboardRouter } from "./routes/leaderboard";
 import { teamsRouter } from "./routes/teams";
@@ -30,8 +30,8 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
 
 const startServer = async () => {
   try {
-    await mongoose.connect(apiConfig.mongoUri);
-    console.log(`MongoDB connected at ${apiConfig.mongoUri}`);
+    await connectDatabase();
+    console.log(`MongoDB connected at ${mongoUri}`);
 
     app.listen(apiConfig.port, () => {
       console.log(`Backend listening on ${apiConfig.baseUrl}`);
